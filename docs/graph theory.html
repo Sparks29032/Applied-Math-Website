@@ -18,12 +18,41 @@ Graphs Fundamentals
 <h2>
 Definitions
 </h2>
-A "vertex" is a point in space. We can draw a segment between two vertices <var>u</var> and <var>v</var>, (not necessarily distinct). 
-This segment is called an "edge". If <var>u</var> and <var>v</var> are the same, the edge is called a "loop". 
-Two edges that both have <var>u</var> and <var>v</var> as endpoints are considered "parallel edges". 
+A <b>vertex</b> is a point in space. We can draw a segment between two vertices <var>u</var> and <var>v</var>, (not necessarily distinct). 
+This segment is called an <b>edge</b>. If <var>u</var> and <var>v</var> are the same, the edge is called a <b>loop</b>. 
+Two edges that both have <var>u</var> and <var>v</var> as endpoints are considered <b>parallel edges</b>. 
 
-A "graph" is a collection of vertices and edges. "Simple graphs" are graphs without loops or parallel edges.
+A <b>graph</b> is a collection of vertices and edges. <b>Simple graphs</b> are graphs without loops or parallel edges. 
 
+Graphs are <b>homeomorphically irreducible</b> when no vertex has two edges. This is because the structure of the graph is not changed if we remove vertices with two edges.
+
+Two vertices on a graph are considered <b>connected</b> if there is a sequence of edges we can traverse to get from one vertex to the other.
+
+The sequence of edges we traverse between two vertices is called a <b>path</b>.
+
+If there is a path between any pair of vertices on a graph, that graph is considered <b>connected</b>. The <b>order</b> of a connected graph is how many vertices it has.
+
+<b>Cycles</b> are paths from a vertex to itself with at least one edge traversed.
+
+Graphs without cycles have special names. If they are connected, they are called <b>trees</b>. If they are not connected (disconnected), they are <b>forests</b>. 
+
+Finally, let us define a notion of "equality" for graphs, known as <b>isomorphism</b>. In a hand-wavy sense, graphs are isomorphic if their edges connect vertices in the same way. 
+We can call graphs <b>distinct</b> when they are not isomorphic to each other. 
+The process for determining isomorphisms is a bit complicated: 
+1) Check if the two graphs have the same amount of vertices. If they do not, they are distinct. 
+2) Label the vertices of one graph <var>x_1, x_2, …</var>
+
+<hr>
+
+<h2>
+Good Will Hunting Problem
+</h2>
+A pop-culture problem involving graph theory comes from <i>Good Will Hunting</i> where Professor Lambeau asks his students to 
+"[d]raw all the [distinct] homeomorphically irreducible trees with [order] 10". Based on our definitions above, we should be able to solve this problem.
+
+
+
+Though Professor Lambeau mentions the notorious difficulty of this problem, we can see after our exploration of graph theory that it is not so hard!
 
 <hr>
 
