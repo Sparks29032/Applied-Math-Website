@@ -20,27 +20,26 @@ Definitions
 </h2>
 A <b>vertex</b> is a point in space. We can draw a segment between two vertices <var>u</var> and <var>v</var>, (not necessarily distinct). 
 This segment is called an <b>edge</b>. If <var>u</var> and <var>v</var> are the same, the edge is called a <b>loop</b>. 
-Two edges that both have <var>u</var> and <var>v</var> as endpoints are considered <b>parallel edges</b>. 
-
+Two edges that both have <var>u</var> and <var>v</var> as endpoints are considered <b>parallel</b>. 
+Two edges sharing only a single endpoint are called <b>adjacent</b>.
 A <b>graph</b> is a collection of vertices and edges. <b>Simple graphs</b> are graphs without loops or parallel edges. 
-
 Graphs are <b>homeomorphically irreducible</b> when no vertex has two edges. This is because the structure of the graph is not changed if we remove vertices with two edges.
-
-Two vertices on a graph are considered <b>connected</b> if there is a sequence of edges we can traverse to get from one vertex to the other.
-
+Two vertices on a graph are considered <b>connected</b> if there is a sequence of adjacent edges we can traverse to get from one vertex to the other.
 The sequence of edges we traverse between two vertices is called a <b>path</b>.
-
 If there is a path between any pair of vertices on a graph, that graph is considered <b>connected</b>. The <b>order</b> of a connected graph is how many vertices it has.
-
 <b>Cycles</b> are paths from a vertex to itself with at least one edge traversed.
-
 Graphs without cycles have special names. If they are connected, they are called <b>trees</b>. If they are not connected (disconnected), they are <b>forests</b>. 
-
 Finally, let us define a notion of "equality" for graphs, known as <b>isomorphism</b>. In a hand-wavy sense, graphs are isomorphic if their edges connect vertices in the same way. 
 We can call graphs <b>distinct</b> when they are not isomorphic to each other. 
-The process for determining isomorphisms is a bit complicated: 
-1) Check if the two graphs have the same amount of vertices. If they do not, they are distinct. 
-2) Label the vertices of one graph <var>x_1, x_2, …</var>
+The process for determining isomorphisms is a bit complicated:
+<ol>
+  <li>Check if the two graphs have the same amount of vertices. If they do not, they are distinct.</li>
+  <li>Label each vertex in one graph <var>x<sub>1</sub>, x<sub>2</sub>, ...</var>. Then, try to pair each vertex <var>x<sub>i</sub></var> to a unique 
+  vertex from the other graph <var>y<sub>i</sub></var> such that if <var>x<sub>i</sub></var> and <var>x<sub>j</sub></var> have an edge, so do 
+  <var>y<sub>i</sub></var> and <var>y<sub>j</sub></var>. Similarly, if there is no edge between <var>x<sub>i</sub></var> and <var>x<sub>j</sub></var>, 
+  then there is no edge between <var>y<sub>i</sub></var> and <var>y<sub>j</sub></var>. If no such pairing exist, the graphs are distinct.</li>
+  <li>However, if such a pairing can be found, these graphs are isomorphic.</li>
+</ol>
 
 <hr>
 
@@ -55,6 +54,20 @@ A pop-culture problem involving graph theory comes from <i>Good Will Hunting</i>
 Though Professor Lambeau mentions the notorious difficulty of this problem, we can see after our exploration of graph theory that it is not so hard!
 
 <hr>
+
+<h2>
+Special Paths
+</h2>
+There are four particularly special types of paths. An <b>Eulerian path</b> is a path that uses every edge in a graph exactly once. 
+Similarly, an <b>Eulerian cycle</b> is a cycle that uses every edge in a graph exactly once. 
+A path where each vertex on the graph is an endpoint to exactly two edges is called a <b>Hamiltonian cycle</b>. 
+Instead, a <b>Hamiltonian path</b> has two vertices as endpoints to exactly one edge while all the rest are endpoints to two. 
+In both Eulerian paths and cycles, all edges of a graph are included in the path. 
+In both Hamiltonian paths and cycles, all vertices are endpoints of edges on the path.
+
+<h2>
+Directed Graphs
+</h2>
 
 </body>
 
